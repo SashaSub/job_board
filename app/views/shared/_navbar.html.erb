@@ -11,46 +11,32 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <% if current_user %>    
-        <li class="nav-item dropdown">          
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Hello               
-            <span class="owner-avatar"><%= check_photo(current_user, 25, 25) %> </span> 
-              
-             <%= current_user.name %>
-            
-          </a>
-
-          <ul class="dropdown-menu">          
-            <li><a class="nav-link" href="/user/profile">Your profile</a></li>
-            <li><a class="nav-link" href="/users/edit">Edit your profile</a></li>
-            <li><a class="nav-link" href="/applications">Your applications</a></li>          
-            <li><%= button_to 'Log out', destroy_user_session_path, class:
-            'dropdown-item', method: :delete %></li>   
-          </ul>
-             
-              
-        </li>
-              <% end %>
-              <%# <span class="owner-avatar">    %>
-                  
-              <%#= image_tag 'default_avatar.jpg', class:'rounded-circle',  style:"height:30px; width:30px" %>
-          
-              <%# <span class="owner-avatar">    %>
-              <%#= image_tag current_user.photo, class:'rounded-circle',  style:"height:30px; width:30px" %>
-           
+            <li class="nav-item dropdown">          
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Hello <span class="owner-avatar"><%= check_photo(current_user, 25, 25) %> </span>               
+                <%= current_user.name %>            
+              </a>
+              <ul class="dropdown-menu">          
+                <li><a class="nav-link" href="/user/profile">Your profile</a></li>
+                <li><a class="nav-link" href="/users/edit">Edit your profile</a></li>
+                <li><a class="nav-link" href="/applications">Your applications</a></li>          
+                <li><%= button_to 'Log out', destroy_user_session_path, class: 'dropdown-item', method: :delete %></li>   
+              </ul>
+            </li>
+        <% end %>             
       </ul>
     
-    <% if current_user %>
-     <% if current_user.role == "admin" %>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">      
-        <button type="button" class="btn btn-success position-relative me-3">
-          Received Applications 
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"><%= @apps %>
-          <span class="visually-hidden">unread messages</span></span>
-        </button>     
-        <%= link_to "Add new job", new_job_path, class: "btn btn-success" %>
-        </div>    
+      <% if current_user %>
+      <% if current_user.role == "admin" %>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">      
+          <button type="button" class="btn btn-success position-relative me-3">
+            Received Applications 
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"><%= @apps %>
+            <span class="visually-hidden">unread messages</span></span>
+          </button>     
+          <%= link_to "Add new job", new_job_path, class: "btn btn-success" %>
+          </div>    
+        <% end %>
       <% end %>
-    <% end %>
   </div>
 </nav>

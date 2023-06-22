@@ -1,27 +1,23 @@
 <div class="position-relative">
   
   <% if user_signed_in? %>
-  <div class="right-center">
-        <h3 class="mb-4">Already signed in?</h3>
-        <%= link_to "See the Jobs Board", jobs_path, class:"btn btn-outline-dark" %>
-  </div>
-        
-    <% else %>
-
-    <div class="bottomright">    
-
-        <h3>Sign in to find new jobs</h3><br>
-        <%= form_for(:user, :url => session_path(:user)) do |f| %>
-            <%= f.text_field :email %> <br><br>
-            <%= f.password_field :password %> <br><br>
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %> <br><br>
-            <%= f.submit 'Sign in' %> <br><br>
-            <%= link_to "Forgot your password?", new_password_path(:user), class:"btn btn-outline-dark" %>
-        <% end %>
-    <% end %>
-    
-   </div>
-    
+    <div class="right-center">
+      <h3 class="mb-4">Already signed in?</h3>
+      <%= link_to "See the Jobs Board", jobs_path, class:"btn btn-outline-dark" %>
+    </div>      
+  <% else %>
+    <div class="bottomright"> 
+      <h3>Sign in to find new jobs</h3><br>
+      <%= form_for(:user, :url => session_path(:user)) do |f| %>
+        <%= f.text_field :email %> <br><br>
+        <%= f.password_field :password %> <br><br>
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %> <br><br>
+        <%= f.submit 'Sign in' %> <br><br>
+        <%= link_to "Forgot your password?", new_password_path(:user), class:"btn btn-outline-dark" %>
+      <% end %>
+    </div>
+  <% end %>
+  
 </div>
 

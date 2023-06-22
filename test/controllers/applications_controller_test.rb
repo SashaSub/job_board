@@ -13,8 +13,7 @@ class ApplicationsControllerTest < ActionDispatch::IntegrationTest
     @application = Application.create(content: "New application", job_id: Job.first.id)   
   end
 
-  test "should get index" do
-    #sign_in user(:one)
+  test "should get index" do    
     get applications_url
     assert_response :success
     assert_equal 200, response.status
@@ -22,14 +21,6 @@ class ApplicationsControllerTest < ActionDispatch::IntegrationTest
     assert_equal "utf-8", response.charset
     assert_equal Application.count, 2
   end
-
-  # test "should get new" do
-  #   get new_job_url
-  #   assert_response :success
-  #   assert_equal 200, response.status
-  #   assert_equal "text/html", response.media_type
-  #   assert_equal "utf-8", response.charset       
-  # end
 
   test "should create application" do
     assert_difference "Application.count", 1 do
@@ -45,14 +36,6 @@ class ApplicationsControllerTest < ActionDispatch::IntegrationTest
     assert_equal "text/html", response.media_type
     assert_equal "utf-8", response.charset
   end
-
-  # test "should get show" do
-  #   get application_url(applications(:one))
-  #   assert_response :found
-  #   assert_equal 302, response.status
-  #   assert_equal "text/html", response.media_type
-  #   assert_equal "utf-8", response.charset
-  # end
 
   test "should get edit" do
     get edit_application_url(applications(:one))

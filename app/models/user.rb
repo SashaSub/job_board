@@ -8,6 +8,5 @@ class User < ApplicationRecord
   has_many :jobs, through: :applications  
   has_one_attached :photo
   
-  #validates :url, presence: true
   enum :role, [:user, :admin]
 end

@@ -10,14 +10,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <% if controller_name == "home"%>
-    <body style="background-image: url(<%= image_path 'hiring-concept-with-empty-chair.jpg' %>); background-size: cover;">
-  <% else %>
-    <body style="background-color: #FBEFFB">
-  <% end %>
-    <% unless controller_name == "home" %>
+    <% if controller_name == "home"%>
+      <body style="background-image: url(<%= image_path 'hiring-concept-with-empty-chair.jpg' %>); background-size: cover;">
+    <% else %>
+      <body style="background-color: #FBEFFB">
       <%= render 'shared/navbar' %>
-    <% end %>   
+    <% end %>
+   
     <div class="container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>

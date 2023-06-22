@@ -1,4 +1,3 @@
-<%# <div class="d-flex align-items-end flex-column mb-3"> %>
 <h1 class="mb-5">Job openings</h1>
 <div id="jobs" class="row">
 
@@ -29,12 +28,10 @@
     </div>
   </div>
 
-  <div class="col-8">
-    
+  <div class="col-8">    
       <div>
         <% @jobs.each do |job| %>
-          <%= render job %>
-      
+          <%= render job %>      
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <%= link_to "Apply for this job", job, class:'btn btn-outline-dark my-4 me-md-2' %>
           </div>
@@ -42,5 +39,4 @@
       </div>
   </div>
 </div>
-<%# </div> %>
 
