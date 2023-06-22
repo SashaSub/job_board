@@ -1,0 +1,16 @@
+<div id="<%= dom_id application %>">
+
+  <div class="card my-3" style="width:40rem">
+    <div class="card-body">
+      <h5 class="card-title"><%= application.job.title %></h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Job code: <%= application.job_id %></h6>
+      <% if current_user.role == "admin" %>        
+        <h6 class="card-subtitle mb-2 text-body-secondary"><strong>Applicant name: </strong><%= application.user.name %></h6>
+      <% end %>
+      <p class="card-subtitle mb-2 text-body-secondary"><strong>Application details: </strong><%= application.content %></p>
+      
+      <%#= link_to "Edit this applicaton", edit_applicaton_path(@applicaton) %>    
+      <%#= button_to "Destroy this applicaton", @applicaton, method: :delete %>  
+    </div>
+  </div>
+</div>

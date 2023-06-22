@@ -1,0 +1,21 @@
+<%= form_with(model: @application, local: true) do |f| %>
+    <% if @application.errors.any? %>
+        <div id = 'error_explanation'>
+            <h2>Este comentario no se pudo crear por las siguientes razones</h2>
+                <ul>
+                    <% @application.errors.full_messages.each do |msg|%>
+                        <li><%= msg %></li>
+                    <% end %>
+                </ul>
+        </div>
+    <% end %>
+
+    
+        <div class = 'field'>
+            <%= f.label :"Why do you want this job?" %>
+            <%= f.text_field :content %>
+            <div class = 'actions'>
+                <%= f.submit "Edit" %>
+            </div>
+        </div>
+<% end %>

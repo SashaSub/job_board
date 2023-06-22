@@ -1,0 +1,46 @@
+<%# <div class="d-flex align-items-end flex-column mb-3"> %>
+<h1 class="mb-5">Job openings</h1>
+<div id="jobs" class="row">
+
+  <div class="col-4">
+    <div class="card">
+      <h5 class="card-header">Filter by</h5>
+      <div class="card-body">    
+        <select class="form-select mb-4" aria-label="Default select example">
+          <option selected>Country:</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <select class="form-select mb-4" aria-label="Default select example">
+          <option selected>Area of expertise:</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <select class="form-select mb-4" aria-label="Default select example">
+          <option selected>Type of contract:</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <button type="button" class="btn btn-outline-secondary">Filter vacancies</button>
+      </div>      
+    </div>
+  </div>
+
+  <div class="col-8">
+    
+      <div>
+        <% @jobs.each do |job| %>
+          <%= render job %>
+      
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <%= link_to "Apply for this job", job, class:'btn btn-outline-dark my-4 me-md-2' %>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>
+<%# </div> %>
+

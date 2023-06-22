@@ -1,0 +1,12 @@
+<div class="card text-center" style="width:30rem">
+    <h5 class="card-header "><%= check_name(current_user) %></h5>
+    <div class="card-body">    
+      <p class="card-text">
+      <%= check_photo(current_user, 100, 100)  %>               
+      <%#= image_tag @user.photo, class:'rounded-circle',  style:"width:25rem" %>
+      <%#= @user.photo %></p>    
+      <p class="card-text">Email: <%= @user.email %></p>    
+      <p class="card-text">Phone number: <%= @user.phone %></p>    
+      <p class="card-text">Current position: <%= @user.current_position %></p>    
+    </div>
+</div>
