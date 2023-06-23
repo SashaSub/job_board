@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Only Admin can create users.
 
-Things you may want to cover:
+Before running seed.rb comment line 9 (has_one_attached :photo) in app > models > user.rb, and enable that line afterwards.
 
-* Ruby version
+Tests are done for applications_controller_test.rb
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
